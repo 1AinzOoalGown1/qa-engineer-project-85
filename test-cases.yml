@@ -324,7 +324,6 @@
   prerequisites: |
     Открыта главная страница веб-игры https://codebattle.hexlet.io/
   test-data: |
-    Сервис временной почты = https://10minutemail.net/
     Nickname = Duo2024
     Password = jioSUO9SFf1
     e-mail = hoc9736s3@zbock.com
@@ -629,3 +628,123 @@
     При нажатии на кнопку "Invites", мы видим надпись "You are following ID: (user id)", кнопку "Pause" и кнопку "Unfollow";
     При нажатии на кнопку "Pause", вместо нее у нас появляется кнопка "Continue", при нажатии на которую, обратно появляется кнопка Pause";
     При нажатии на кнопку "Unfollow", мы перестаем отслеживать пользователя (состояние выпадающего окна "Invites" такое, какое было до отслеживания)
+
+- summary: |
+    Проверка создания новой задачи
+  requirement: |
+    Пользователь должен иметь возможность создавать новые задачи
+  prerequisites:
+    Открыта страница - https://codebattle.hexlet.io/tasks
+    Пользователь авторизован
+  test-data: |
+    нет
+  steps:
+    - Нажимаем на кнопку "Create new task"
+    - Полю "Task" присваиваем значение "New_task"
+    - Полю "Description" присваиваем значение "new task for test!"
+    - Нажимаем на плюсик под текстом "Input parameters types (Max 4)"
+    - Полю "name" присваиваем случайное значение (из латинских букв) и нажимаем кнопку "Submit", так делаем еще три раза!
+    - Нажимаем на плюсик под текстом "Examples (Min 3)"
+    - Полю "Example Value Edit" присваиваем значение "[1,3,5,7]" в первую форму и "1" во вторую форму, нажимаем кнопку "Submit", так делаем еще 2 раза (меняйте числа на случайные), после чего нажимаем крестик
+    - Нажимаем кнопку "Upload"
+  expected-result: |
+    Задача успешно создана и появилась среди других задач ~/tasks
+    
+- summary: |
+    Просмотр информации о кланах
+  requirement: |
+    Пользователь должен иметь возможность просматривать информацию о кланах: Clan Details, Name, Creation Date, Creator Name, Clan members, name and joined date (каждого юзера в клане)
+  prerequisites:
+    Открыта страница - https://codebattle.hexlet.io/clans
+    Пользователь авторизован
+  test-data: |
+    нет
+  steps:
+    - Нажимаем кнопку "Show" справа от случайного клана
+  expected-result: |
+    Произошел редирект на страницу клана, доступна информация о клане: Clan Details, Name, Creation Date, Creator Name, Clan members, name and joined date (каждого юзера в клане) 
+
+- summary: |
+    Проверяем GET и POST запросы в DevTools
+  requirement: |
+    В консоли не должно быть ошибок, как и в вкладке network
+  prerequisites:
+    Открыта первая страница каталога
+  test-data: |
+    нет
+  steps:
+    - Открываем DevTools
+    - Перезагружаем страницу
+    - Открываем вкладку "Console"
+    - Открываем вкладку "Network"
+    - Фильтруем по статусу
+  expected-result: |
+    Все запросы уходят и приходят без ошибок
+
+- summary: |
+    Тестирование кроссбраузерности на Safari 18.4 on Mac OS / Google Chrome 137 on Windows 10 / FireFox 139 on Windows 10 (на каждом по очереди)
+  requirement: |
+    Сайт работает корректно на различных браузерах
+  prerequisites:
+    Открыт Browser Stack и выбран браузер Safari 18.4 и Mac OS / Google Chrome 137 on Windows 10 / FireFox 139 on Windows 10
+    Открыта основная страница - https://codebattle.hexlet.io/#lobby
+    Пользователь авторизован
+  test-data: |
+    #Код для победы в игре на Node.js!
+    #const _ = require("lodash");
+    #const R = require("rambda");
+    #const solution = (width, length) => {
+      #return width * length;
+    #};
+    #module.exports = solution;
+  steps:
+    - Создаем игру с ботом (игра - "rect_area")
+    - Выигрываем бота
+    - Возвращаемся на основную страницу через "Hexlet Codebattle by hexlets community"
+    - Открываем вкладку "tournaments"
+    - Нажимаем кнопку "Show" справа от случайного турнира
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "My profile"
+    - Нажимаем на кнопку "Completed games"
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Settings", выбираем случайный звуковой тип и ставим случайную громкость, нажимаем Save
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Tasks"
+    - Нажимаем "Create new tasks"
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Clans"
+    - Нажимаем кнопку "Show" справа от случайного клана
+    - end#Pretty good job so far!#end
+  expected-result: |
+    Сайт работает корректно
+
+- summary: |
+    Эмуляции на разрешениях: 1280 x 800, 900 x 800, 400 x 700
+  requirement: |
+    Сайт работает корректно при разрешении различных разрешениях
+  prerequisites:
+    Открыт DevTools и эмуляция с подготовленными кастомными разрешениями 1280 x 800, 900 x 800, 400 x 700
+    Открыта основная страница - https://codebattle.hexlet.io/#lobby
+    Пользователь авторизован
+  test-data: |
+    empty
+  steps:
+    - Создаем игру с ботом (игра - "rect_area")
+    - Выигрываем бота
+    - Возвращаемся на основную страницу через "Hexlet Codebattle by hexlets community"
+    - Открываем вкладку "tournaments"
+    - Нажимаем кнопку "Show" справа от случайного турнира
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "My profile"
+    - Нажимаем на кнопку "Completed games"
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Settings", выбираем случайный звуковой тип и ставим случайную громкость, нажимаем Save
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Tasks"
+    - Нажимаем "Create new tasks"
+    - Нажимаем на нашу аватарку/ник
+    - Открываем "Clans"
+    - Нажимаем кнопку "Show" справа от случайного клана
+    - end#Pretty good job so far!#end
+  expected-result: |
+    Весь текст, изображения, линии отображаются корректно, функционалом сайта удобно пользоваться
