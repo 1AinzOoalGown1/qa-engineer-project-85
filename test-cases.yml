@@ -6,13 +6,15 @@
   prerequisites: |
     Открыта главная страница веб-игры https://codebattle.hexlet.io/
   test-data: |
-    Сервис временной почты = https://10minutemail.net/
+    Nickname - An_atoly2001
+    email - Anatoly_love_hexlet@mail.ru
+    password - typical*password
   steps:
     - Нажимаем на кнопку "Sign up"
     - Заполняем поля для регистрации
     - Нажимаем на кнопку "Submit"
   expected-result: |
-    Должна произойти переадресация на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+    Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией, запрос ушел на сервер (DevTools)
 
 - summary: |
     Проверка получения письма-подтверждение о регистрации на электронную почту
@@ -21,11 +23,18 @@
   prerequisites: |
     Открыта главная страница веб-игры https://codebattle.hexlet.io/
   test-data: |
-    Сервис временной почты = https://10minutemail.net/
+    Nickname - An_atoly2002
+    email - Anatoly_love_hexlet2@mail.ru
+    password - typical*password
+    -------
+    email - Anatoly_love_hexlet2@mail.ru
+    password_for_email - Qwerty123456
   steps:
     - Нажимаем на кнопку "Sign up"
     - Заполняем поля для регистрации
     - Нажимаем на кнопку "Submit"
+    - Заходим на почту и авторизуемся https://mail.ru/
+    - Проверяем письма https://e.mail.ru/inbox/
   expected-result: |
     Должно прийти письмо-подтверждение о регистрации на электронную почту
     
@@ -36,15 +45,15 @@
   prerequisites: |
     Открыта главная страница веб-игры https://codebattle.hexlet.io/
   test-data: |
-    Сервис временной почты = https://10minutemail.net/
-    e-mail = hoc97363@zbock.com
-    Пароль = jioSUO9SFf1
+    Nickname - An_atoly2002
+    email - Anatoly_love_hexlet2@mail.ru
+    password - typical*password
   steps:
     - Нажимаем на кнопку "Sign in"
     - Заполняем поля для авторизации
     - Нажимаем на кнопку "Submit"
   expected-result: |
-    Должна произойти переадресация на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+    Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
     
 - summary: |
     Проверка авторизации с помощью Github
@@ -60,7 +69,7 @@
     - Нажимаем на кнопку "Sign in"
     - Нажимаем на кнопку "Sign in with Github"
   expected-result: |
-    Должна произойти переадресация на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+    Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
 
 - summary: |
     Проверка авторизации с помощью Discord
@@ -77,7 +86,7 @@
     - Нажимаем на кнопку "Sign in with Dicord"
     - Нажимаем на кнопку "Авторизовать"
   expected-result: |
-    Должна произойти переадресация на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+    Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
 
 - summary: |
     Проверка восстановления пароля с помощью электронной почты
@@ -88,11 +97,13 @@
     Пользователь не авторизован
     Учётная запись создана
   test-data: |
-    empty
+    email - Anatoly_love_hexlet2@mail.ru
+    password_for_email - Qwerty123456
+    new_password - typical*password
   steps:
     - Нажимаем на кнопку "Sign in"
     - Нажимаем на гиперссылку с текстом "Forgot your password?"
-    - Вводим e-mail который использовали при регистрации на codebattle
+    - Вводим e-mail
     - Нажимаем на кнопку "Submit"
     - Переходим по ссылке из письма от codebattle
     - Вводим новый пароль
@@ -101,18 +112,13 @@
     - Нажимаем на кнопку "Sign in"
     - Заполняем данные для входа 
     - Нажимаем на кнопку "Submit"
-    #Убеждаемся что пароль действительно изменён
-    - Нажимаем на кнопку "Sign out"
-    - Нажимаем на кнопку "Sign in"
-    - Заполняем данные для входа 
-    - Нажимаем на кнопку "Submit"
   expected-result: |
-    Должна произойти переадресация на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+    Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
 
 - summary: |
     Проверка создания игры с ботом
   requirement: |
-    Пользователь должен иметь возможность создавать игру с ботом
+    Пользователь должен иметь возможность создавать игру с ботом c таймером на 3 минуты, 30 минут и 60 минут
   prerequisites: |
     Открыта страница лобби веб-игры https://codebattle.hexlet.io/#lobby
     Пользователь авторизован
@@ -122,11 +128,12 @@
     - Нажимаем на кнопку "Create a game"
     - Выбираем уровень игры - "hard" нажимаем на кнопку четыре "звезды"
     - Выбираем тип игры - нажимаем на кнопку "With a bot"
-    - Устанавливаем время игры - 30 минут
+    - Устанавливаем время игры 3 минуты
     - Выбираем игру "four_is_magic" из предложенного списка
     - Нажимем кнопку "Create battle"
+    - Повторяем с таймером 30 и 60 минут
   expected-result: |
-    Должна произойти переадресация на страницу с игрой
+    Должна произойти переадресация на страницу с игрой; справа от вкладки output, идет таймер Timeout in: 00:03:00/00:30:00/01:00:00
 
 - summary: |
     Проверка подключения к созданной игре
