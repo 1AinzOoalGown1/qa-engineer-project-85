@@ -104,7 +104,7 @@
   status: pass
 
 - summary: |
-    Проверка измненения языка программирования в качестве оружия для сражения 
+    Проверка изменения языка программирования в качестве оружия для сражения 
   status: pass
 
 - summary: |
@@ -114,3 +114,39 @@
 - summary: |
     Проверка функции отслеживания пользователя
   status: fail
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
+
+- summary: |
+    П
+  status: pass
