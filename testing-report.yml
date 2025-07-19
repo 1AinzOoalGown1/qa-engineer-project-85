@@ -116,37 +116,65 @@
   status: fail
 
 - summary: |
-    П
+    Проверка создания новой задачи
   status: pass
 
 - summary: |
-    П
+    Просмотр информации о кланах
   status: pass
 
 - summary: |
-    П
+    Успешная сортировка по дате регистрации пользователей
   status: pass
 
 - summary: |
-    П
+    Успешная работа ссылки на сайт Hexlet из меню
   status: pass
 
 - summary: |
-    П
+    Успешный выход из аккаунта
   status: pass
 
 - summary: |
-    П
+    Успешный переход в общий рейтинг пользователей из меню
   status: pass
 
 - summary: |
-    П
+    Успешный переход в Discord по ссылке в меню
   status: pass
 
 - summary: |
-    П
+    Успешный переход в Telegram по ссылке в меню
   status: pass
 
 - summary: |
-    П
+    Успешное выведение всплывающего окна при наведении на никнейм
+  status: pass
+
+- summary: |
+    Успешная работа пагинации в рейтинге пользователей
+  status: pass
+
+- summary: |
+    Успешная работа фильтрации в рейтинге по имени пользователя
+  status: pass
+
+- summary: |
+    Успешная сортировка списка пользователей по рейтингу в убывающем порядке
+  status: pass
+
+- summary: |
+    Успешная сортировка по столбцу "Games played"
+  status: pass
+
+- summary: |
+    Проверяем GET и POST запросы в DevTools
+  status: fail
+
+- summary: |
+    Тестирование кроссбраузерности на Safari 18.4 on Mac OS / Google Chrome 137 on Windows 10 / FireFox 139 on Windows 10
+  status: pass
+
+- summary: |
+    Эмуляции на разрешениях: 1280 x 800, 900 x 800, 400 x 700
   status: pass
