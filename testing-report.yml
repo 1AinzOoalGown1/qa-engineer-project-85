@@ -172,6 +172,10 @@
   status: pass
 
 - summary: |
+    Проверка работы инструкции поясняющей игровой процесс для пользователя (кнопка "Show guide") на странице игры
+  status: fail
+
+- summary: |
     Проверяем GET и POST запросы в DevTools
   status: fail
 
