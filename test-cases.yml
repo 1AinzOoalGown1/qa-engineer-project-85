@@ -6,9 +6,8 @@
   prerequisites: |
     Открыта главная страница веб-игры https://codebattle.hexlet.io/
   test-data: |
-    Nickname - An_atoly2001
-    email - Anatoly_love_hexlet@mail.ru
-    password - typical*password
+    Сервис для временной почты - https://internxt.com/ru/temporary-email 
+    password - typical*password (можете придумать любой корректный, данный пример для удобства)
   steps:
     - Нажимаем на кнопку "Sign up"
     - Заполняем поля для регистрации
@@ -39,7 +38,7 @@
     Должно прийти письмо-подтверждение о регистрации на электронную почту
     
 - summary: |
-    Проверка авторизации с помощью электронной почты
+    Проверка успешной авторизации с помощью электронной почты
   requirement: |
     Пользователь должен иметь возможность авторизоваться с помощью электронной почты
   prerequisites: |
@@ -54,6 +53,22 @@
     - Нажимаем на кнопку "Submit"
   expected-result: |
     Должен произойти редирект на страницу https://codebattle.hexlet.io/#lobby с успешной авторизацией
+
+- summary: |
+    Проверка авторизации с помощью невалидной электронной почты
+  requirement: |
+    Пользователь не имеет возможности авторизоваться с помощью некорректной электронной почты
+  prerequisites: |
+    Открыта главная страница веб-игры https://codebattle.hexlet.io/
+  test-data: |
+    email - Anatoly_love_hexlet2mail.ru (или любая другая некорректная почта)
+    password - typical*password
+  steps:
+    - Нажимаем на кнопку "Sign in"
+    - Заполняем поля для авторизации
+    - Нажимаем на кнопку "Submit"
+  expected-result: |
+    Авторизация безуспешна, под полем 'email' выводится ошибка валидации "Invalid email", обводка поля становиться красной
     
 - summary: |
     Проверка авторизации с помощью Github
